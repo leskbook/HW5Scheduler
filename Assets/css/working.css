@@ -1,0 +1,40 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.col-10 {
+    background: transparent;
+    border: none;
+    resize: none;
+    color: #000000;
+    border-left: 1px solid rgb(196, 194, 194);
+    border-top: 1px solid rgb(196, 194, 194);
+    border-bottom: 1px solid rgb(184, 184, 184);
+    padding: 10px;
+    white-space: pre-wrap;
+}
+
+.row {
+    white-space: pre-wrap;
+    height: 80px;
+}
+
+#time {
+    padding: 23px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.hour {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.rowBtn {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #06AED5;
+    color: white;
+}

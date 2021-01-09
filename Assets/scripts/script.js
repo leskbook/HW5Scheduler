@@ -1,67 +1,81 @@
-var appointText = "";
-var appointTime = "";
-var currentDate;
-var currentTime;
-var currentContainer;
-var tempArray = [];
-var storedAppointments;
-var returnedAppointments;
+//Variables
+var now = moment();
+var container = $(".container");
+var txtArea = "";
+var setInt;
+var initTime;
+var initTimeS
 
+setPlanner();
+setInt = setInterval(interval, 1000);
 
+function interval() {
+    initTime = parseInt(moment().format("mm"));
+    initTimeS = parseInt(moment().format("ss"));
+    var minLeft = 60 - initTime;
 
-$(window).on("load", function() {
-    currentDate = moment().format("dddd MMM Do YYYY, h:mm a");
-    $("#currentDay").append(currentDate);
-    currentTime = moment().format("H");
-
-    function renderAppointments() {
-        storedAppointments = JSON.parse(localStorage.getItem("appointments"));
-        if (storedAppointments !== null) {
-            for (i = 0; i < storedAppointments.length; i++) {
-                returnedAppointments = storedAppointments[i];
-                details = returnedAppointments.details;
-                timeIndex = returnedAppointments.time;
-                timeIndex = timeIndex.replace(":00", '');
-                if (details !== null) {
-                    $("#" + timeIndex).children('div').children('div').children('textarea').val(details);
-                }
-            }
-        }
-    }
-
-    renderAppointments();
-
-    for (i = 0; i <= 23; i++) {
-        CurrentContainer = i;
-        if (currentTime == i) {
-            $('#' + CurrentContainer).addClass("present");
-            $('#' + CurrentContainer).children('div').children('div').children("textarea").addClass("present");
-        } else if (currentTime > i) {
-            $('#' + CurrentContainer).addClass("past");
-            $('#' + CurrentContainer).children('div').children('div').children("textarea").addClass("past");
-        } else {
-            $('#' + CurrentContainer).addClass("future");
-            $('#' + CurrentContainer).children('div').children('div').children("textarea").addClass("future");
-        }
-    }
-})
-
-
-
-$(".saveBtn").click(function() {
-    appointText = $(this).parent('div').children('div').children('textarea').val();
-    appointTime = $(this).parent('div').parent().attr("id");
-    appointment = {
-        time: appointTime,
-        details: appointText
-    }
-    tempArray = JSON.parse(localStorage.getItem("appointments"));
-    if (tempArray === null) {
-        localStorage.setItem('appointments', JSON.stringify([{ time: appointTime, details: appointText }]));
+    if (initTime !== 0) {
+        console.log("initTime: ", initTime, " ", typeof(initTime), "minLeft: ", minLeft, " ", typeof(minLeft));
     } else {
-        tempArray.push(appointment);
-        localStorage.setItem("appointments", JSON.stringify(tempArray));
+        console.log("Top of the hour");
+        console.log("initTime: ", initTime, "initTimeS: ", initTimeS);
+        if (initTimeS === 0) {
+            setPlanner();
+        }
+    }
+}
+$(".saveBtn").on('click', function() {
+    e.preventDefault();
+    var currentEl = $(this);
+    var parentIndex = parseInt(currentEl.parent().index());
+    console.log("parent index on click:", parentIndex);
+    txtArea = currentEl.siblings(".description");
+    localStorage.setItem(parentIndex, txtArea.val());
+    console.log(txtArea.val());
+})
+
+//Update Planner
+function setPlanner() {
+    current = moment();
+    $("#currentDay").text(now.format("dddd, MMMM, D, YYYY, HH:mm a"));
+
+    var add_minutes = function(dt, minutes) {
+        return new Date(dt.getTime() + minutes * 60000);
 
     }
-    $(this).parent('div').children('div').children('textarea').replaceWith($('<textarea>' + appointText.addClass("textarea") + '</textarea>'));
-})
+    console.log(add_minutes(new Date(2014, 10, 2), 30).toString());
+
+    container.children().each(function() {
+        var element = $(this);
+        var index = parseInt(element.index());
+        var pHourEl = element.children(".hour");
+        var txtEl = element.children(".description");
+        console.log(txtEl);
+        if (localStorage.getItem(index) !== null) {
+            // txtArea(HTML) = localStorage.setItem(index);
+            console.log("txtArea: ", txtEl);
+            txtEl.html(localStorage.getItem(index));
+        }
+        var pHour = moment().hour(9 + index);
+        pHour = pHour.format("h A");
+        pHourEl.html(pHour);
+        pHour = moment().hour(9 + index);
+        var hour = parseInt(pHour.format("H"));
+        var cHour = parseInt(moment().format("H"));
+
+        console.log("current hour: ", cHour, "pHour: ", hour);
+        descEl = element.children(".description");
+        if (hour < cHour) {
+            descEl.removeClass("present");
+            descEl.addClass("past");
+        } else if (hour === cHour) {
+            descEl.removeClass("future");
+            descEl.addClass("present");
+        } else {
+            descEl.addClass("future");
+        }
+
+        return;
+    });
+
+}
