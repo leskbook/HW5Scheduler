@@ -24,6 +24,8 @@ function interval() {
         }
     }
 }
+//Save button function
+
 $(".btn").on('click', function() {
     var currentEl = $(this);
     var parentIndex = parseInt(currentEl.parent().index());
@@ -43,9 +45,9 @@ function setPlanner() {
         var index = parseInt(element.index());
         var pHourEl = element.children(".hour");
         var txtEl = element.children(".descr");
-        console.log(txtEl);
+        // console.log(txtEl);
         if (localStorage.getItem(index) !== null) {
-            console.log("txtArea: ", txtEl);
+            // console.log("txtArea: ", txtEl);
             txtEl.html(localStorage.getItem(index));
         }
         var pHour = moment().hour(9 + index);
@@ -55,7 +57,7 @@ function setPlanner() {
         var hour = parseInt(pHour.hour());
         var cHour = parseInt(moment().format("H"));
 
-        console.log("current hour: ", cHour, "pHour: ", hour);
+        // console.log("current hour: ", cHour, "pHour: ", hour);
         descEl = element.children(".descr");
         if (hour < cHour) {
             descEl.removeClass("present");
