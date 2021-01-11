@@ -49,18 +49,20 @@ function setPlanner() {
             txtEl.html(localStorage.getItem(index));
         }
         var pHour = moment().hour(9 + index);
-        pHour = pHour.format("h A");
-        pHourEl.html(pHour);
-        pHour = moment().hour(+index);
-        var hour = parseInt(pHour.format("H"));
+        // pHour = pHour.format("h A");
+        pHourEl.html(pHour.format("h A"));
+        // pHour = moment().hour(+index);
+        var hour = parseInt(pHour.hour());
         var cHour = parseInt(moment().format("H"));
 
         console.log("current hour: ", cHour, "pHour: ", hour);
         descEl = element.children(".descr");
         if (hour < cHour) {
             descEl.removeClass("present");
+            descEl.removeClass("future");
             descEl.addClass("past");
         } else if (hour === cHour) {
+            descEl.removeClass("past");
             descEl.removeClass("future");
             descEl.addClass("present");
         } else {
