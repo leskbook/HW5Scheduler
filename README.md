@@ -1,5 +1,5 @@
 # HW5Scheduler
-
+Daily Workday Planner
 
 **Assignment Objective:**
 
@@ -24,4 +24,10 @@ Using a combination of HTML, CSS and javascript this task is meant to present a 
 
 **Code Snippet**
  - setting planner colors for past/present/future
+
+<img src="Assets/images/time updater.png" alt="Java script code demonstrating the class replacement logic needed to change timeslot past/present/future">
  
+
+The finished project. The planner denotes current date and each work day time slot is represented correctly using past/present/future representations.
+
+<img src="Assets/images/final results.png" alt="The completed calendar">
