@@ -16,160 +16,95 @@
 </head>
 
 <body>
-
-
-    <!-- Header -->
-
-    <div class="jumbotron border-bottom  jumbotron-fluid headerDiv">
-        <div class="container text-center  ">
-            <h1 class="display-4">Weekday Planner </h1>
-            <p class="lead">A simple planner to keep you on track!</p>
-            <p id="currentDay" class="lead"></p>
-        </div>
+    <div class="jumbotron border-bottom jumbotron-fluid headerDiv">
+        <!-- <div class="container"> -->
+        <h1 class="display-4">Weekday Planner </h1>
+        <p class="lead">A simple planner to keep you on track!</p>
+        <p id="currentDay" class="lead"></p>
     </div>
 
-
-
-    <div class="container text-right  plannerDiv">
-        <div class="row row9 ">
-
-            <div class="input-container input-group col-1 ">
-                <p class="border-bottom">9 a.m.</p>
-
+    <div class="container text-right plannerDiv">
+        <div class="row">
+            <div class="input-container input-group col-1">
+                <p class="col-form-label-sm">9 a.m.</p>
             </div>
-
-
-            <div class="input-group  col-10 form-group">
-                <textarea id="textarea" class="form-control custom-control textborder" rows="2" style="resize:none" name="9"></textarea>
-
-                <button class="  col-1 btn  "> <span style="font-size: 2.5em; color: #525aa1"><i class="far fa-save"></i>
-                    </span></button>
-
-            </div>
+            <textarea class="col-md-10 descr"> </textarea>
+            <button class="col-1 btn"> <span style="font-size: 2.5em; color: #525aa1"><i class="far fa-save"></i>
+                     </span></button>
         </div>
-
-
-        <div class="row row10 ">
-
-            <div class="input-group input-container  col-1">
-                <p class="border-bottom">10 a.m.</p>
-
+        <div class="container text-right plannerDiv"></div>
+        <div class="row">
+            <div class="input-container input-group col-1">
+                <p class="col-form-label-sm">10 a.m.</p>
             </div>
-            <div class="input-group col-10 form-group">
-                <textarea id=text10AM class="form-control custom-control textborder" rows="2" style="resize:none" name="10"></textarea>
-
-                <button class="  col-1 
-                    btn  "> <span style="font-size: 2.5em; color: #525aa1"><i class="far fa-save"></i>
+            <textarea class="col-md-10 descr"> </textarea>
+            <button class="col-1 btn"> <span style="font-size: 2.5em; color: #525aa1"><i class="far fa-save"></i>
                     </span></button>
-            </div>
         </div>
-
-
-        <div class="row row11">
-
-            <div class="  input-group  col-1">
-                <p class="border-bottom">11 a.m.</p>
-
+        <div class="container text-right plannerDiv"></div>
+        <div class="row">
+            <div class="input-container input-group col-1">
+                <p class="col-form-label-sm">11 a.m.</p>
             </div>
-            <div class="input-group col-10 form-group">
-                <textarea id=text11AM class="form-control custom-control textborder" rows="2" style="resize:none" name="11"></textarea>
-                <button class="  col-1 
-                    btn  "> <span style="font-size: 2.5em; color: #525aa1"><i class="far fa-save"></i>
+            <textarea class="col-md-10 descr"> </textarea>
+            <button class="col-1 btn"> <span style="font-size: 2.5em; color: #525aa1"><i class="far fa-save"></i>
                     </span></button>
-            </div>
         </div>
-
-
-        <div class="row row12  ">
-
-            <div class="  input-group  col-1">
-                <p class="border-bottom">12 p.m.</p>
-
+        <div class="container text-right plannerDiv"></div>
+        <div class="row">
+            <div class="input-container input-group col-1">
+                <p class="col-form-label-sm">12 p.m.</p>
             </div>
-            <div class="input-group col-10 form-group">
-                <textarea id=text12AM class="form-control custom-control textborder" rows="2" style="resize:none" name="12"></textarea>
-                <button class="  col-1 
-                    btn  "> <span style="font-size: 2.5em; color: #525aa1"><i class="far fa-save"></i>
+            <textarea class="col-md-10 descr"> </textarea>
+            <button class="col-1 btn"> <span style="font-size: 2.5em; color: #525aa1"><i class="far fa-save"></i>
                     </span></button>
-            </div>
         </div>
-
-
-        <div class="row row13 ">
-
-            <div class="   input-group  col-1">
-                <p class="border-bottom">1 p.m.</p>
-
+        <div class="container text-right plannerDiv"></div>
+        <div class="row">
+            <div class="input-container input-group col-1">
+                <p class="col-form-label-sm">1 p.m.</p>
             </div>
-            <div class="input-group col-10 form-group">
-                <textarea id=text1PM class="form-control custom-control textborder" rows="2" style="resize:none" name="13"></textarea>
-                <button class="  col-1 
-                    btn  "> <span style="font-size: 2.5em; color: #525aa1"><i class="far fa-save"></i>
+            <textarea class="col-md-10 descr"> </textarea>
+            <button class="col-1 btn"> <span style="font-size: 2.5em; color: #525aa1"><i class="far fa-save"></i>
                     </span></button>
-            </div>
         </div>
-
-
-        <div class="row row14 ">
-
-            <div class="  input-group  col-1">
-                <p class="border-bottom">2 p.m.</p>
-
+        <div class="container text-right plannerDiv"></div>
+        <div class="row">
+            <div class="input-container input-group col-1">
+                <p class="col-form-label-sm">2 p.m.</p>
             </div>
-            <div class="input-group col-10 form-group">
-                <textarea id="text2PM" class="form-control custom-control textborder" rows="2" style="resize:none" name="14"></textarea>
-                <button class="  col-1 
-                    btn  "> <span style="font-size: 2.5em; color: #525aa1"><i class="far fa-save"></i>
+            <textarea class="col-md-10 descr"> </textarea>
+            <button class="col-1 btn"> <span style="font-size: 2.5em; color: #525aa1"><i class="far fa-save"></i>
                     </span></button>
-            </div>
         </div>
-
-
-        <div class="row row15 ">
-
-            <div class="   input-group  col-1">
-                <p class="border-bottom">3 p.m.</p>
-
+        <div class="container text-right plannerDiv"></div>
+        <div class="row">
+            <div class="input-container input-group col-1">
+                <p class="col-form-label-sm">3 p.m.</p>
             </div>
-            <div class="input-group col-10 form-group">
-                <textarea id=text3PM class="form-control custom-control textborder" rows="2" style="resize:none" name="15"></textarea>
-                <button class="  col-1 
-                    btn  "> <span style="font-size: 2.5em; color: #525aa1"><i class="far fa-save"></i>
+            <textarea class="col-md-10 descr"> </textarea>
+            <button class="col-1 btn"> <span style="font-size: 2.5em; color: #525aa1"><i class="far fa-save"></i>
                     </span></button>
-            </div>
         </div>
-
-
-        <div class="row row16 ">
-
-            <div class="  input-group  col-1">
-                <p class="border-bottom">4 p.m.</p>
-
+        <div class="container text-right plannerDiv"></div>
+        <div class="row">
+            <div class="input-container input-group col-1">
+                <p class="col-form-label-sm">4 p.m.</p>
             </div>
-            <div class="input-group col-10 form-group">
-                <textarea id=text4PM class="form-control custom-control textborder" rows="2" style="resize:none" name="16"></textarea>
-                <button class="  col-1 
-                    btn  "> <span style="font-size: 2.5em; color: #525aa1"><i class="far fa-save"></i>
+            <textarea class="col-md-10 descr"> </textarea>
+            <button class="col-1 btn"> <span style="font-size: 2.5em; color: #525aa1"><i class="far fa-save"></i>
                     </span></button>
-            </div>
         </div>
-
-        <div class="row row17 ">
-
-            <div class="  input-group  col-1">
-                <p class="border-bottom">5 p.m.</p>
-
+        <div class="container text-right plannerDiv"></div>
+        <div class="row">
+            <div class="input-container input-group col-1">
+                <p class="col-form-label-sm">5 p.m.</p>
             </div>
-            <div class="input-group    col-10 form-group">
-                <textarea id=text5PM class="textborder form-control custom-control" rows="2" style="resize:none" name="17"></textarea>
-                <button class="  col-1 
-                    btn  "> <span style="font-size: 2.5em; color: #525aa1"><i class="far fa-save"></i>
+            <textarea class="col-md-10 descr"> </textarea>
+            <button class="col-1 btn"> <span style="font-size: 2.5em; color: #525aa1"><i class="far fa-save"></i>
                     </span></button>
-            </div>
         </div>
-
     </div>
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>

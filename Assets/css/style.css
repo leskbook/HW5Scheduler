@@ -1,19 +1,17 @@
 body {
-    background-color: whitesmoke
+    font-family: 'Asap Condensed', serif;
+    font-size: 15px;
+    line-height: 1;
 }
 
 .jumbotron {
     text-align: center;
-    background-image: url(..assets/images/jumbo.jpg);
+    background-image: url(../images/jumbo.jpg);
     background-size: cover;
     height: 100%;
-    color: black;
-    border-radius: 0;
-    border-bottom: 10px solid black;
-}
-
-fas {
-    background-color: rgb(255, 1, 1)
+    color: gray;
+    border-radius: 1;
+    border-bottom: 10px solid blue;
 }
 
 h1 {
@@ -26,6 +24,12 @@ p {
     margin-top: 15px;
 }
 
+.descr {
+    white-space: pre-wrap;
+    background-color: yellow;
+    color: gray;
+}
+
 .lead {
     font-family: 'Asap Condensed', serif;
 }
@@ -35,83 +39,23 @@ p {
     box-shadow: 2px black;
 }
 
-#textarea {
+textarea {
     border-radius: 5px;
-}
-
-#text10AM {
-    border-radius: 5px;
-}
-
-#text11AM {
-    border-radius: 5px;
-}
-
-#text12AM {
-    border-radius: 5px;
-}
-
-#text1PM {
-    border-radius: 5px;
-}
-
-#text2PM {
-    border-radius: 5px;
-}
-
-#text3PM {
-    border-radius: 5px;
-}
-
-#text4PM {
-    border-radius: 5px;
-}
-
-#text5PM {
-    border-radius: 5px;
-}
-
-.headerDiv {
-    background-image: url("../images/jumbo.jpg");
-    color: black;
+    background: transparent;
     font-family: 'Asap Condensed', serif;
 }
 
-textarea p {
-    -webkit-box-shadow: inset 2px 2px 2px 0px #dddddd;
-    -moz-box-shadow: inset 2px 2px 2px 0px #dddddd;
-    box-shadow: inset 2px 2px 2px 0px #dddddd;
-}
-
 .past {
-    background-color: red;
+    background-color: beige;
+    color: black;
 }
 
 .present {
-    background-color: bisque;
+    background-color: red;
+    color: black;
 }
 
 .future {
     background-color: green;
-}
-
-@media screen and (max-width: 767px) {
-    .jumbotron {
-        height: 300px;
-    }
-    p {
-        font-size: smaller;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .jumbotron {
-        height: 300px;
-    }
-    .hourC {
-        margin-right: 0px;
-    }
-    .spanBttn {
-        border-radius: 25px;
-    }
+    color: black;
 }
